@@ -1,6 +1,6 @@
 const userModel = require("../../db/models/user.model")
 const Myhelper=require("../helper")
-
+const fs = require("fs")
 
 
 class User{
@@ -124,7 +124,19 @@ static deleteAd=async(req,res)=>{
 }
 
 
-    
+static updeteprofile=async(req,res)=>{
+    try{
+       
+    // const est=req.file.originalname.split(".").pop()
+    // const newn=`upload/user/`+ Date.now() +est
+
+    // fs.renameSync(req.file.path,newn)
+    req.user.image=req.file.filename;
+        
+    await req.user.save()
+    return Myhelper.reshandlar(res,200,true,req.user,"done")
+    }catch(e){ return Myhelper.reshandlar(res,500,false,e,e.message)}
+}
 
  
 }

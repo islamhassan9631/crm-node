@@ -6,15 +6,7 @@ const fs = require('fs');
 
 class client{
     static add= async(req,res)=>{
-        //buy unit 
-        /*    {
-            "price" : 7788,
-            "status" : "false",
-            "unitnumber" : 8,
-            "client" : [],
-            "transactions" : [],
-            "_id" : ObjectId("63bb30b43f737eb5a7e16456")
-        }*/
+        
         try{
             const clientData=new clientModel({
                 created_by:req.user._id
@@ -29,7 +21,7 @@ class client{
     }}
     static login=async(req,res)=>{
         try{
-            const client= await client.login(req.body.email,req.body.password)
+            const client= await clientModel.login(req.body.email,req.body.password)
            
             const token=await client.genratToken()
               await client.save()
@@ -44,7 +36,7 @@ class client{
     static profile= async(req,res)=>{
           try{
             Myhelper.reshandlar(
-                res,200,true,req.client,
+                res,200,true,req.clinet,
             )
           }catch(e){
   Myhelper.reshandlar( res,500,false,e,e.message)
@@ -96,11 +88,11 @@ static delete=async(req,res)=>{
 }
 static logout= async(req,res)=>{
     try{
- req.client.tokens=req.client.tokens.filter((el)=>{
+ req.clinet.tokens=req.clinet.tokens.filter((el)=>{
     return el.token!= req.token
 }) 
 
-await req.client.save()
+await req.clinet.save()
 return Myhelper.reshandlar(res,200,true,"done")
     }catch(e){ return Myhelper.reshandlar(res,500,false,e,e.message)}
 }
@@ -118,24 +110,34 @@ return Myhelper.reshandlar(res,200,true,"done")
 
 }
 static getData= async(req,res)=>{
-    await req.Clinet.populate({path:"transactions",select:"transaction_info -_id"});
-    await req.Clinet.populate({path:"created_by",select:"fName lName "});
-    console.log(req.Clinet.transactions);
-    const clientResponseObject={employee:{...req.Clinet.created_by._doc},transactions:req.Clinet.transactions,clinet:{fName:req.Clinet._doc.fName,lname:req.Clinet._doc.lName}}
+    await req.clinet.populate({path:"transactions",select:"transaction_info -_id"});
+    await req.clinet.populate({path:"created_by",select:"fName lName "});
+    console.log(req.clinet.transactions);
+    const clientResponseObject={employee:{...req.clinet.created_by._doc},transactions:req.clinet.transactions,clinet:{fName:req.clinet._doc.fName,lname:req.clinet._doc.lName}}
     res.json(clientResponseObject)
     // console.log(req.client.transactions[0].transaction_info)
-    // const doc = new PDFDocument();
+     const doc = new PDFDocument();
 
     
-    // doc.pipe(fs.createWriteStream('client1.pdf'));
+     doc.pipe(fs.createWriteStream('client1.pdf'));
    
-    // doc
+     doc
       
-    //   .fontSize(25)
-    //   .text(JSON.stringify(req.client.transactions[0].transaction_info), 100, 100);
+     .fontSize(25)
+    .text(JSON.stringify(clientResponseObject), 100, 100);
     
-    // doc.end();
-    // res.sendFile(path.join(__dirname, '../../client1.pdf'))
+     doc.end();
+     res.sendFile(path.join(__dirname, '../../client1.pdf'))
+}
+static updeteprofile=async(req,res)=>{
+    try{
+       
+    
+   req.clinet.image=req.file.filename;
+        
+    await  req.clinet.save()
+    return Myhelper.reshandlar(res,200,true,req.clinet,"done")
+    }catch(e){ return Myhelper.reshandlar(res,500,false,e,e.message)}
 }
 }
 

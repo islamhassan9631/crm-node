@@ -1,5 +1,5 @@
 const jwt=require("jsonwebtoken")
-const User=require("../db/models/user.model")
+
 const Clinet=require("../db/models/client")
 
   const auth=async(req,res,next)=>{
@@ -7,8 +7,7 @@ const Clinet=require("../db/models/client")
     try{
 const token=req.header("Authorization").replace("Bearer ","")
 const decode=jwt.verify(token,"node")
-//  const user=await User.findOne({_id: decode._id,
-//     "tokens:token":token})
+
      const clinet=await Clinet.findOne({_id: decode._id,
          "tokens:token":token})
     
@@ -21,7 +20,7 @@ const decode=jwt.verify(token,"node")
 
 
     
-   req.Clinet=clinet
+   req.clinet=clinet
     req.token=token
     
 next()

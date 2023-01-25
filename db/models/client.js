@@ -47,6 +47,9 @@ maxLength:14,
         required:true,
 
     }, 
+    image:{
+        type:String, 
+    },
     gender:{
         type:String, 
         trim:true,

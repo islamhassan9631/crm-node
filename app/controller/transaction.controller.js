@@ -11,25 +11,21 @@ class Transaction{
             deposited_by_user:req.user._id,
             ...req.body})   ;
 
-		// transaction["transaction_info"].date = moment(transaction["transaction_info"].date);
-		// transaction.date_added = moment(moment(Date.now()).format("YYYY-MM-DD"));
+		
         await transaction.save();
         const client=await clinet.findOne({_id:req.body.client});
 
         client.transactions.push(transaction._id);
         client.save()
         console.log(client);
-            // const transactionData = await TransactionModel.create(transaction)
-            // const client = await client.findById(req.params.id,req.body.transaction["Client"]);
-		//  await client.transactions.push(transactionData._id);
-		// await client.save();
-         const bulid = await Build.findOne({_id:req.body.unit});
-         console.log(bulid);
-		 await bulid.transactions.push(transaction._id);
-		 await bulid.save();
-              console.log(bulid);
+           
+        //  const bulid = await Build.findOne({_id:req.body.unit});
+        //  console.log(bulid);
+		//  await bulid.transactions.push(transaction._id);
+		//  await bulid.save();
+        //       console.log(bulid);
          
-            // await transactionData.save()
+          
             Myhelper.reshandlar(res, 200, true, {transaction}, "added")
 
         }
@@ -39,13 +35,7 @@ class Transaction{
 
         }
     }
-    //client transaction unit 
-    // populate (transaction) unit populate
-    // unit:{
-    //    number:10
-    //}
-    // json.stringfy(unit)
-    //doc()
+    
 
     static gettransction= async(req,res)=>{
         try{

@@ -5,47 +5,63 @@ const projectSchema = mongoose.Schema({
         type: String,
         enum: ["buy", "show"]
     },
-    building: [
-        {
-            build: [{
-                num: {
-                    type: Number
-
-                },
-                floors: [
-                    {
-                        floornumber: { type: Number, unique: true },
-                        units: [
-                            {
-
-                                price: {
-                                    type: Number,
-                                    required: true
-                                },
-                                status: { type: String, default: false },
-
-                                unitnumber: { type: Number },
-                                client:
-                                    [{ type: mongoose.Schema.Types.ObjectId, ref: "Client" }],
-                                transactions:
-                                    [{ type: mongoose.Schema.Types.ObjectId, ref: "Transaction" }],
-                            }
-                        ]
-                    },////f number
-
-
-
-                ]
-
-                ,
-                area: {
-                    type: String
-
-                },
-
-            }]
-        }
-    ]
+    building: {
+        type:[
+            {
+                build:{
+                    type: [{
+                        num: {
+                            type: Number,
+                            default:0
+        
+                        },
+                        floors: {
+                            type:[
+                                {
+                                     floornumber :{ type: Number ,default:0},
+                                     units :{
+                                        type:[
+                                            {
+                
+                                                price: {
+                                                    type: Number,
+                                                    required: true
+                                                },
+                                                status: { type: String, default: false },
+                
+                                                unitnumber: { type: Number },
+                                                client:
+                                                    [{ type: mongoose.Schema.Types.ObjectId, ref: "Client" }],
+                                                transactions:
+                                                    [{ type: mongoose.Schema.Types.ObjectId, ref: "Transaction" }],
+                                            }
+                                        ],
+                                        default:[]
+                                     }
+                                 },
+             
+             
+             
+                             ],
+                            default:[]
+                        }
+        
+                        ,
+                        area: {
+                            type: String
+        
+                        },
+        
+                    }],
+                    default:[]
+                }
+            }
+        ],
+        default:[]
+    },
+    dec:{
+        type: String
+    }
 
 
 

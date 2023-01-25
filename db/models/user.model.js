@@ -18,8 +18,13 @@ const Userschema = mongoose.Schema( {
         minLength: 5,
         maxLength:20,
         required:true
-    }, 
-   
+    },
+    age:{
+type:Number
+    } ,
+    image:{
+        type:String, 
+    },
     email:{
         type:String, 
         trim:true,
@@ -48,7 +53,7 @@ const Userschema = mongoose.Schema( {
     }, 
     
     
-    phoneNum:{
+    phone:{
         type: String,
         validate(value){
             if(!validator.isMobilePhone(value, "ar-EG"))
