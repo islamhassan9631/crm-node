@@ -66,7 +66,10 @@ type:Number
                 lowercase:true,
                 required:true
     },methods:[{type:String}],
-    
+    passwordChangedAt: Date,
+    passwordResetCode: String,
+    passwordResetExpires: Date,
+    passwordResetVerified: Boolean,
 
     
 

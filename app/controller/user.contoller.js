@@ -80,6 +80,18 @@ static update=async(req,res)=>{
         return Myhelper.reshandlar(res,200,true,user,"done")
     }catch(e){ return Myhelper.reshandlar(res,500,false,e,e.message)}
 }
+static updateprofile=async(req,res)=>{
+    try{
+        const updates = Object.keys(req.body)
+       updates.forEach((el)=>(req.user[el]=req.body[el]))
+       await req.user.save()
+       
+        return Myhelper.reshandlar(res,200,true,req.user,"done")
+    }
+    catch(e){
+        return Myhelper.reshandlar(res,500,false,e,e.message)
+    }
+}
 static delete=async(req,res)=>{
     try{
         const user=await userModel.findByIdAndDelete(req.params.id)

@@ -1,4 +1,6 @@
 const Buildd = require("../../db/models/Build.model")
+const { v4: uuidv4 } = require('uuid');
+const sharp = require('sharp');
 const Myhelper = require("../helper")
 class Build {
     //// add project
@@ -26,11 +28,11 @@ class Build {
     static myunit = async (req, res) => {
         try {
 
-            await req.Clinet.populate("myunit")
-            Myhelper.reshandlar(res, 200, true, {
-                unit: req.Clinet.myunit,
-                clinet: req.Clinet,
-            }, "added")
+            await req.clinet.populate({path:"myunit",select:'price'}),
+            Myhelper.reshandlar(res, 200, true, 
+              req.clinet
+         , "added")
+           
         }
         catch (e) {
             Myhelper.reshandlar(res, 500, false, e, e.message)
@@ -260,27 +262,27 @@ class Build {
             const project = await Buildd.findById(req.params.projectid);
             //get building from prject buildings 
             if (!project) throw new Error("not found project");
-            console.log(project)
+           
             const building = project.building.find(building => building._id == req.params.buildingid);
             if (!building) throw new Error("not found building");
             const build = building.build.find(build => build._id == req.params.buildid);
             if (!build) throw new Error("not found build");
             console.log(req.params.floorId);
             const floor = build.floors.findIndex(floor => floor._id == req.params.floorId)
-          
+          console.log(floor);
             
           
             let oldfloor = build.floors[floor];
-            
+            console.log(oldfloor);
           let newfloor = {...oldfloor._doc,...req.body}
         
          
-         
+         console.log(newfloor);
            
            
              
               
-          build.floors[floor]=newfloor
+         build.floors=newfloor
 
             await project.save();
 
@@ -476,7 +478,8 @@ class Build {
             const floor = build.floors.find(floor => floor._id == req.params.floorid)
             console.log(floor);
             const unit = floor.units.find(unit => unit._id == req.params.unitid)
-            console.log(req.params.unitid);
+            //// unit.image.push(req.file.filename);
+            console.log(unit);
 
 
           
@@ -500,24 +503,24 @@ class Build {
             const project = await Buildd.findById(req.params.projectid);
             //get building from prject buildings 
             if (!project) throw new Error("not found project");
-            console.log(project)
+            
             const building = project.building.find(building => building._id == req.params.buildingid);
             if (!building) throw new Error("not found building");
             const build = building.build.find(build => build._id == req.params.buildid);
             if (!build) throw new Error("not found build");
             console.log(req.params.floorId);
             const floor = build.floors.find(floor => floor._id == req.params.floorid)
-            console.log(floor);
+           
             const unit = floor.units.find(unit => unit._id == req.params.unitid)
-            console.log(req.params.unitid);
+        
             floor.units= floor.units.filter(unit=> unit._id != req.params.unitid);
 
-          
-
+          console.log(unit);
+          await project.save();
             Myhelper.reshandlar(res, 200, true,
                 unit
 
-                , "added")
+                , "deletunit")
         }
         catch (e) {
             Myhelper.reshandlar(res, 500, false, e, e.message)
@@ -534,16 +537,16 @@ class Build {
             const project = await Buildd.findById(req.params.projectid);
             //get building from prject buildings 
             if (!project) throw new Error("not found project");
-            console.log(project)
+            
             const building = project.building.find(building => building._id == req.params.buildingid);
             if (!building) throw new Error("not found building");
             const build = building.build.find(build => build._id == req.params.buildid);
             if (!build) throw new Error("not found build");
-            console.log(req.params.floorId);
+           
             const floor = build.floors.find(floor => floor._id == req.params.floorid)
             console.log(floor);
             const unit = floor.units.findIndex(unit => unit._id == req.params.unitid)
-            console.log(req.params.unitid);
+      
             let oldunit = floor.units[unit];
             
           let newunit = {...oldunit._doc,...req.body}
@@ -561,6 +564,42 @@ class Build {
 await project.save()
             Myhelper.reshandlar(res, 200, true,
                 newunit
+
+                , "added")
+        }
+        catch (e) {
+            Myhelper.reshandlar(res, 500, false, e, e.message)
+
+        }
+
+    })
+    static addimgunit = (async (req, res) => {
+        const _id = req.params.id
+        try {
+            //get project by  name or id 
+            const project = await Buildd.findById(req.params.projectid);
+            //get building from prject buildings 
+            if (!project) throw new Error("not found project");
+            console.log(project)
+            const building = project.building.find(building => building._id == req.params.buildingid);
+            if (!building) throw new Error("not found building");
+            const build = building.build.find(build => build._id == req.params.buildid);
+            if (!build) throw new Error("not found build");
+            console.log(req.params.floorId);
+            const floor = build.floors.find(floor => floor._id == req.params.floorid)
+            console.log(floor);
+            const unit = floor.units.find(unit => unit._id == req.params.unitid)
+            unit.image=req.files.images;
+            console.log(req.files.images);
+           
+            
+           
+
+
+          
+await project.save()
+            Myhelper.reshandlar(res, 200, true,
+                unit
 
                 , "added")
         }

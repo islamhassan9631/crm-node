@@ -57,7 +57,7 @@ maxLength:14,
         enum: ["male", "female"]
     }, 
     created_by: {type:mongoose.Schema.Types.ObjectId,required: true ,ref: "User"},
-    unit: [{ type:Object}],/*unit:[   {
+    unit: [{type: mongoose.Schema.Types.ObjectId, ref: "Build"}],/*unit:[   {
         "price" : 7788,
         "status" : "false",
         "unitnumber" : 8,
@@ -119,7 +119,7 @@ Clinetschema.methods.genratToken= async function(){
 
 }
 Clinetschema.virtual("myunit", {
-    ref:"unit",    localField:"_id",
+    ref:"Build",     localField: '_id',
      foreignField:"client"
  })
  Clinetschema.virtual("client", {

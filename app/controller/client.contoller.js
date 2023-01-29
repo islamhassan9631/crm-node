@@ -114,12 +114,12 @@ static getData= async(req,res)=>{
     await req.clinet.populate({path:"created_by",select:"fName lName "});
     console.log(req.clinet.transactions);
     const clientResponseObject={employee:{...req.clinet.created_by._doc},transactions:req.clinet.transactions,clinet:{fName:req.clinet._doc.fName,lname:req.clinet._doc.lName}}
-    res.json(clientResponseObject)
+   
     // console.log(req.client.transactions[0].transaction_info)
      const doc = new PDFDocument();
 
     
-     doc.pipe(fs.createWriteStream('client1.pdf'));
+     doc.pipe(fs.createWriteStream(`upload/pdf/${req.clinet._id}.pdf`));
    
      doc
       
@@ -138,6 +138,18 @@ static updeteprofile=async(req,res)=>{
     await  req.clinet.save()
     return Myhelper.reshandlar(res,200,true,req.clinet,"done")
     }catch(e){ return Myhelper.reshandlar(res,500,false,e,e.message)}
+}
+static editprofile=async(req,res)=>{
+    try{
+        const updates = Object.keys(req.body)
+       updates.forEach((el)=>(req.clinet[el]=req.body[el]))
+       await req.clinet.save()
+       
+        return Myhelper.reshandlar(res,200,true,req.clinet,"done")
+    }
+    catch(e){
+        return Myhelper.reshandlar(res,500,false,e,e.message)
+    }
 }
 }
 

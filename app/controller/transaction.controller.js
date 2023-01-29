@@ -3,21 +3,47 @@ const clinet=require("../../db/models/client")
 const Build=require("../../db/models/Build.model")
 const Myhelper=require("../helper")
 const moment = require("moment");
+const PDFDocument = require('pdfkit')
+const path=require('path')
+const fs = require('fs');
+
 
 class Transaction{
     static addtransaction = async(req,res)=>{
         try{
+             const client=await clinet.findOne({email:req.body.client});
+             
            const transaction = new  TransactionModel({
+           
             deposited_by_user:req.user._id,
-            ...req.body})   ;
+           
 
-		
-        await transaction.save();
-        const client=await clinet.findOne({_id:req.body.client});
+            ...req.body,client:client._id}) 
+              ;
+            await transaction.save();
+            console.log(transaction);
+            client.transactions.push(transaction._id);
+          await  client.save()
+            
+             const clientResponseObject={employee:req.user.fName,transaction,clinet:{fName:client.fName,lname:client.lName}}
+   
+            // console.log(req.client.transactions[0].transaction_info)
+             const doc = new PDFDocument();
+        
+            
+             doc.pipe(fs.createWriteStream(`upload/pdf/${client._id}.pdf`));
 
-        client.transactions.push(transaction._id);
-        client.save()
-        console.log(client);
+           
+             doc
+              
+             .fontSize(25)
+            .text(JSON.stringify(clientResponseObject), 100, 100);
+            
+            await doc.end();
+        
+       
+console.log(client);
+        
            
         //  const bulid = await Build.findOne({_id:req.body.unit});
         //  console.log(bulid);

@@ -27,7 +27,12 @@ const projectSchema = mongoose.Schema({
                                                     type: Number,
                                                     required: true
                                                 },
-                                                status: { type: String, default: false },
+                                                status: {
+                                                    type: String,
+                                                    
+                                                    default:"available"
+                                                },
+                                                images:[],
                 
                                                 unitnumber: { type: Number },
                                                 client:
