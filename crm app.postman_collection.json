@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "7a6224db-ac14-4abd-afe9-8c55c6ed802e",
 		"name": "crm app",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "19600736"
 	},
 	"item": [
@@ -22,22 +22,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fName\":\"islam\",\r\n    \"lName\":\"hassan\",\r\n    \"phone\":\"01159429129\",\r\n    \"email\":\"islamtest@gmail.com\",\r\n    \"password\":987654321,\r\n    \"roles\":\"super admin\",\r\n    \"methods\":[\"post\",\"get\",\"delete\",\"patch\"]\r\n}",
+							"raw": "{\r\n    \"fName\":\"rasha\",\r\n    \"lName\":\"hassan\",\r\n    \"phone\":\"01159429129\",\r\n    \"email\":\"rashsrosha511@gmail.com\",\r\n    \"password\":987654321,\r\n    \"roles\":\"super admin\",\r\n    \"methods\":[\"post\",\"get\",\"delete\",\"patch\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}user/",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}user/"
 					},
 					"response": []
 				},
@@ -52,15 +44,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}user/",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}user/"
 					},
 					"response": []
 				},
@@ -69,15 +53,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}user/",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}user/"
 					},
 					"response": []
 				},
@@ -92,15 +68,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}user/user",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"user"
-							]
-						}
+						"url": "{{baseUrl}}user/user"
 					},
 					"response": []
 				},
@@ -111,22 +79,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"islamtest@gmail.com\",\r\n    \"password\":\"987654321\"\r\n}",
+							"raw": "{\r\n    \"email\":\"monahassan9643@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}user/auth",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"auth"
-							]
-						}
+						"url": "{{baseUrl}}user/auth"
 					},
 					"response": []
 				},
@@ -141,16 +101,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"user",
-								"63d0d4618b486cfdba59f9ed"
-							]
-						}
+						"url": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed"
 					},
 					"response": []
 				},
@@ -174,16 +125,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"user",
-								"63d0d4618b486cfdba59f9ed"
-							]
-						}
+						"url": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed"
 					},
 					"response": []
 				},
@@ -192,16 +134,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"user",
-								"63d0d4618b486cfdba59f9ed"
-							]
-						}
+						"url": "{{baseUrl}}user/user/63d0d4618b486cfdba59f9ed"
 					},
 					"response": []
 				},
@@ -226,15 +159,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{baseUrl}}user/user",
-							"host": [
-								"{{baseUrl}}user"
-							],
-							"path": [
-								"user"
-							]
-						}
+						"url": "{{baseUrl}}user/user"
 					},
 					"response": []
 				}
@@ -263,15 +188,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}clinet/clinet",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"clinet"
-							]
-						}
+						"url": "{{baseUrl}}clinet/clinet"
 					},
 					"response": []
 				},
@@ -286,15 +203,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}clinet/clinet",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"clinet"
-							]
-						}
+						"url": "{{baseUrl}}clinet/clinet"
 					},
 					"response": []
 				},
@@ -303,15 +212,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}clinet/clinet",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"clinet"
-							]
-						}
+						"url": "{{baseUrl}}clinet/clinet"
 					},
 					"response": []
 				},
@@ -319,7 +220,13 @@
 					"name": "login",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QxNTU1M2U0Y2M0Y2E2NzNmYTYwNDgiLCJpYXQiOjE2NzQ3MzcyMjB9.X9l3KgxwcVHEf8BUpDVFin63hD4-sss8UnqgCOS4XpQ",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n     \"email\":\"ahmedtest@gmail.com\",\r\n    \"password\":\"987654321\"\r\n}",
@@ -329,15 +236,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}clinet/auth",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"auth"
-							]
-						}
+						"url": "{{baseUrl}}clinet/auth"
 					},
 					"response": []
 				},
@@ -352,15 +251,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}clinet/auth",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"auth"
-							]
-						}
+						"url": "{{baseUrl}}clinet/auth"
 					},
 					"response": []
 				},
@@ -375,16 +266,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"client",
-								"63d15553e4cc4ca673fa6048"
-							]
-						}
+						"url": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048"
 					},
 					"response": []
 				},
@@ -395,23 +277,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fName\":\"hosaam\"\r\n}",
+							"raw": "{\r\n    \"unit\":\"63d17f0cbf403993eeb2f92a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"client",
-								"63d15553e4cc4ca673fa6048"
-							]
-						}
+						"url": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048"
 					},
 					"response": []
 				},
@@ -420,16 +293,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"client",
-								"63d15553e4cc4ca673fa6048"
-							]
-						}
+						"url": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048"
 					},
 					"response": []
 				},
@@ -454,16 +318,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"client",
-								"63d15553e4cc4ca673fa6048"
-							]
-						}
+						"url": "{{baseUrl}}clinet/client/63d15553e4cc4ca673fa6048"
 					},
 					"response": []
 				},
@@ -478,15 +333,22 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}clinet/data",
-							"host": [
-								"{{baseUrl}}clinet"
-							],
-							"path": [
-								"data"
-							]
-						}
+						"url": "{{baseUrl}}clinet/data"
+					},
+					"response": []
+				},
+				{
+					"name": "my unit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QxNTU1M2U0Y2M0Y2E2NzNmYTYwNDgiLCJpYXQiOjE2NzQ3MzcyMjB9.X9l3KgxwcVHEf8BUpDVFin63hD4-sss8UnqgCOS4XpQ",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}Build/test"
 					},
 					"response": []
 				}
@@ -509,15 +371,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/build",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build"
-							]
-						}
+						"url": "{{baseUrl}}Build/build"
 					},
 					"response": []
 				},
@@ -526,16 +380,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build",
-								"63ce992c5ecaf5f507c1e8fe"
-							]
-						}
+						"url": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe"
 					},
 					"response": []
 				},
@@ -544,15 +389,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/build",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build"
-							]
-						}
+						"url": "{{baseUrl}}Build/build"
 					},
 					"response": []
 				},
@@ -561,16 +398,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build",
-								"63ce992c5ecaf5f507c1e8fe"
-							]
-						}
+						"url": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe"
 					},
 					"response": []
 				},
@@ -579,16 +407,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build",
-								"63ce992c5ecaf5f507c1e8fe"
-							]
-						}
+						"url": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe"
 					},
 					"response": []
 				},
@@ -606,16 +425,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"build",
-								"63ce992c5ecaf5f507c1e8fe"
-							]
-						}
+						"url": "{{baseUrl}}Build/build/63ce992c5ecaf5f507c1e8fe"
 					},
 					"response": []
 				},
@@ -624,18 +434,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/build/63ce992c5ecaf5f507c1e8ff",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63ce992c5ecaf5f507c1e8fe",
-								"build",
-								"63ce992c5ecaf5f507c1e8ff"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/build/63ce992c5ecaf5f507c1e8ff"
 					},
 					"response": []
 				},
@@ -653,18 +452,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/build/63ce992c5ecaf5f507c1e8ff",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63ce992c5ecaf5f507c1e8fe",
-								"build",
-								"63ce992c5ecaf5f507c1e8ff"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/build/63ce992c5ecaf5f507c1e8ff"
 					},
 					"response": []
 				},
@@ -685,22 +473,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/buildings/63ce992c5ecaf5f507c1e8ff/build/63ce995d5ecaf5f507c1e90f/floors/63cf611cd83a3e8215a67ac2",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63ce992c5ecaf5f507c1e8fe",
-								"buildings",
-								"63ce992c5ecaf5f507c1e8ff",
-								"build",
-								"63ce995d5ecaf5f507c1e90f",
-								"floors",
-								"63cf611cd83a3e8215a67ac2"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63ce992c5ecaf5f507c1e8fe/buildings/63ce992c5ecaf5f507c1e8ff/build/63ce995d5ecaf5f507c1e90f/floors/63cf611cd83a3e8215a67ac2"
 					},
 					"response": []
 				},
@@ -718,22 +491,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311"
 					},
 					"response": []
 				},
@@ -742,22 +500,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311"
 					},
 					"response": []
 				},
@@ -766,22 +509,7 @@
 					"request": {
 						"method": "PATCH",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311"
 					},
 					"response": []
 				},
@@ -790,24 +518,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311",
-								"units",
-								"63d16a50d9f8a14fe22655ee"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee"
 					},
 					"response": []
 				},
@@ -816,24 +527,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311",
-								"units",
-								"63d16a50d9f8a14fe22655ee"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee"
 					},
 					"response": []
 				},
@@ -851,24 +545,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310",
-								"floors",
-								"63d1676e607c08aa12f84311",
-								"units",
-								"63d16a50d9f8a14fe22655ee"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310/floors/63d1676e607c08aa12f84311/units/63d16a50d9f8a14fe22655ee"
 					},
 					"response": []
 				},
@@ -877,20 +554,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310"
 					},
 					"response": []
 				},
@@ -908,20 +572,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310"
 					},
 					"response": []
 				},
@@ -939,20 +590,15 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310",
-							"host": [
-								"{{baseUrl}}Build"
-							],
-							"path": [
-								"project",
-								"63d1676e607c08aa12f8430e",
-								"buildings",
-								"63d1676e607c08aa12f8430f",
-								"build",
-								"63d1676e607c08aa12f84310"
-							]
-						}
+						"url": "{{baseUrl}}Build/project/63d1676e607c08aa12f8430e/buildings/63d1676e607c08aa12f8430f/build/63d1676e607c08aa12f84310"
+					},
+					"response": []
+				},
+				{
+					"name": "unit img",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -972,15 +618,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}transaction/transaction",
-							"host": [
-								"{{baseUrl}}transaction"
-							],
-							"path": [
-								"transaction"
-							]
-						}
+						"url": "{{baseUrl}}transaction/transaction"
 					},
 					"response": []
 				},
@@ -997,22 +635,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"unit\":\"63d16a50d9f8a14fe22655ee\",\r\n    \"client\":\"63d15553e4cc4ca673fa6048\",\r\n    \"transaction_info\":{\r\n        \"unit price\":200000,\r\n        \"payment\":\"cash\",\r\n        \"payment methods\":\"biannual\",\r\n        \"first part\":50000,\r\n        \"remaining\":150000,\r\n        \"lnlay values\":75000\r\n    }\r\n}",
+							"raw": "{\r\n    \"unit\":\"63d16a50d9f8a14fe22655ee\",\r\n    \"client\":\"ahmedtest@gmail.com\",\r\n    \"transaction_info\":{\r\n        \"unit price\":200000,\r\n        \"payment\":\"cash\",\r\n        \"payment methods\":\"biannual\",\r\n        \"first part\":50000,\r\n        \"remaining\":150000,\r\n        \"lnlay values\":75000\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}transaction/transaction",
-							"host": [
-								"{{baseUrl}}transaction"
-							],
-							"path": [
-								"transaction"
-							]
-						}
+						"url": "{{baseUrl}}transaction/transaction"
 					},
 					"response": []
 				},
@@ -1027,16 +657,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94",
-							"host": [
-								"{{baseUrl}}transaction"
-							],
-							"path": [
-								"transaction",
-								"63d175c070c366f9a44f9a94"
-							]
-						}
+						"url": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94"
 					},
 					"response": []
 				},
@@ -1054,16 +675,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94",
-							"host": [
-								"{{baseUrl}}transaction"
-							],
-							"path": [
-								"transaction",
-								"63d175c070c366f9a44f9a94"
-							]
-						}
+						"url": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94"
 					},
 					"response": []
 				},
@@ -1072,16 +684,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94",
-							"host": [
-								"{{baseUrl}}transaction"
-							],
-							"path": [
-								"transaction",
-								"63d175c070c366f9a44f9a94"
-							]
-						}
+						"url": "{{baseUrl}}transaction/transaction/63d175c070c366f9a44f9a94"
 					},
 					"response": []
 				}
@@ -1110,15 +713,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}url/63a90b15977f88af1b482e78",
-							"host": [
-								"{{baseUrl}}url"
-							],
-							"path": [
-								"63a90b15977f88af1b482e78"
-							]
-						}
+						"url": "{{baseUrl}}url/63a90b15977f88af1b482e78"
 					},
 					"response": []
 				},
@@ -1133,15 +728,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{baseUrl}}url/",
-							"host": [
-								"{{baseUrl}}url"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}url/"
 					},
 					"response": []
 				},
@@ -1159,15 +746,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}url/",
-							"host": [
-								"{{baseUrl}}url"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}url/"
 					},
 					"response": []
 				},
@@ -1176,15 +755,66 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}url/",
-							"host": [
-								"{{baseUrl}}url"
-							],
-							"path": [
-								""
-							]
-						}
+						"url": "{{baseUrl}}url/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "passord",
+			"item": [
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rashsrosha511@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}password/forgotPassword"
+					},
+					"response": []
+				},
+				{
+					"name": "verifyResetCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resetCode\":\"741731\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}password/verifyResetCode"
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\":\"monahassan9643@gmail.com\",\r\n     \"newPassword\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}password/resetPassword"
 					},
 					"response": []
 				}
