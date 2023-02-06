@@ -447,6 +447,7 @@ class Build {
             if (!floor) throw new Error("not found floor");
             console.log(req.body);
             floor.units.push(req.body)
+            
         
 
             await project.save();
@@ -589,7 +590,7 @@ await project.save()
             const floor = build.floors.find(floor => floor._id == req.params.floorid)
             console.log(floor);
             const unit = floor.units.find(unit => unit._id == req.params.unitid)
-            unit.image=req.files.images;
+            unit.image=req.files.filename
             console.log(req.files.images);
            
             

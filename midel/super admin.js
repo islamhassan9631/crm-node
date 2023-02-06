@@ -53,13 +53,14 @@ const decode=jwt.verify(token,"node")
 		console.log(dbmethod);
 		console.log(dbmethod.methods);
 		console.log(req.user.methods);
-		if(req.user.methods.includes(method))	return  next()
+		if(!req.user.methods.includes(method)) throw  new Error("you can not change")
+			return  next()
 
-		res.send({massage:"you can not changeh"})
+		// res.send({massage:"you can not changeh"})
 		
 	
 	}catch(e){
-		res.send({massage:"you can not changeh"})
+		res.status(500).send({massage:"you can not changeh"})
 	}
 }
 	

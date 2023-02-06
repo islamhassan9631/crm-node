@@ -32,7 +32,9 @@ const projectSchema = mongoose.Schema({
                                                     
                                                     default:"available"
                                                 },
-                                                images:[],
+                                                image:{
+                                                    type:Buffer
+                                                },
                 
                                                 unitnumber: { type: Number },
                                                 client:
@@ -71,6 +73,14 @@ const projectSchema = mongoose.Schema({
 
 
 }, { timestamps: true })
+// projectSchema.methods.toJSON = function () {
+//     // this (document)
+//     const Build = this
+//     // convert document to object
+//     const BuildObject = Build.toObject()
+
+//     return BuildObject
+// }
 const Build = mongoose.model("Build", projectSchema)
 
 module.exports = Build
